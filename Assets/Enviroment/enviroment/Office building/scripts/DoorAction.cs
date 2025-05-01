@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class DoorAction : MonoBehaviour {
 
@@ -11,14 +12,14 @@ public class DoorAction : MonoBehaviour {
 
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (RightTriggerPressed())
         {
           
             RaycastHit hit;
 
             Physics.Raycast(transform.position,transform.TransformDirection(Vector3.forward), out hit);
             
-                
+                Debug.Log(hit.transform.name);
                 if (hit.transform.tag == "door")
                 {
 
@@ -59,4 +60,16 @@ public class DoorAction : MonoBehaviour {
 
 		
 	}
+    private bool RightTriggerPressed()
+    {
+        Debug.Log("");
+        InputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
+
+        if (rightHand.isValid && rightHand.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerPressed))
+        {
+            return triggerPressed;
+        }
+
+        return false;
+    }
 }

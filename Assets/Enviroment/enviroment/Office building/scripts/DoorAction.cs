@@ -62,7 +62,7 @@ public class DoorAction : MonoBehaviour {
 	}
     private bool RightTriggerPressed()
     {
-        Debug.Log("");
+        //Debug.Log("");
         InputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
 
         if (rightHand.isValid && rightHand.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerPressed))

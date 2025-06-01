@@ -31,7 +31,7 @@ public class Door : MonoBehaviour
 
     public void MoveMyDoor()
     {
-
+        Debug.Log("MoveDoorCalled");
         
         foreach (var door in UseDoors)
         {
@@ -46,7 +46,7 @@ public class Door : MonoBehaviour
                         door_in_use = true;
                         
                         door.isDoorOpen = true;
-
+                    Debug.Log("Before Start Open Coroutine");
                         DoorStartUsing = StartCoroutine(OpenDoor(door.OpenValue, door.Door,door.RotationOrigin));
 
 
@@ -61,7 +61,8 @@ public class Door : MonoBehaviour
                         door_in_use = true;
                         
                         door.isDoorOpen = false;
-                        DoorStartUsing = StartCoroutine(CloseDoor(door.CloseValue, door.Door,door.OpenValue,door.RotationOrigin));
+                    Debug.Log("Before Start Close Coroutine");
+                    DoorStartUsing = StartCoroutine(CloseDoor(door.CloseValue, door.Door,door.OpenValue,door.RotationOrigin));
                         
                     }
                 
@@ -96,8 +97,8 @@ public class Door : MonoBehaviour
 
     public IEnumerator OpenDoor(int Angle,GameObject currentDoor,GameObject RotationOri)
     {
-        
 
+        Debug.Log("OpenDoor 시작됨");
         repeatLoop:
         yield return new WaitForSeconds(0.01f);
         
@@ -144,7 +145,8 @@ public class Door : MonoBehaviour
 
     public IEnumerator CloseDoor(int Angle, GameObject currentDoor,int OpenValue, GameObject RotationOri)
     {
-        repeatLoop:
+        Debug.Log("CloseDoor 시작됨");
+    repeatLoop:
         yield return new WaitForSeconds(0.008f);
 
        

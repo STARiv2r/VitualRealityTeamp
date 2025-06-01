@@ -12,6 +12,7 @@ TagManager:
   - button f2
   - button f1
   - button f6
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Overlay UI
   - Water
   - UI
-  - 
+  - Fire
   - 
   - 
   - 

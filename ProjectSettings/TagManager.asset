@@ -12,14 +12,11 @@ TagManager:
   - button f2
   - button f1
   - button f6
-  - LHand
-  - RHand
-  - PlayerHand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Overlay UI
   - Water
   - UI
   - 

@@ -21404,32 +21404,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 939338758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1870894797 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8918417954395769480, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
-  m_PrefabInstance: {fileID: 1690528804343128668}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1870894804
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1870894797}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 2.95, z: 1}
-  m_Center: {x: 0, y: 1.53, z: 0}
 --- !u!1 &1871627506
 GameObject:
   m_ObjectHideFlags: 0
@@ -24315,7 +24289,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 739434953502204410, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9886041
+      value: -3.666
       objectReference: {fileID: 0}
     - target: {fileID: 739434953502204410, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -24323,7 +24297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 739434953502204410, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5696614
+      value: -2.531
       objectReference: {fileID: 0}
     - target: {fileID: 739434953502204410, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24353,18 +24327,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7161051615228748396, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7161051615228748396, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8122531209634967348, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8918417954395769480, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
       propertyPath: m_Name
       value: FireExtinguisherPrefab
@@ -24372,10 +24334,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8918417954395769480, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1870894804}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

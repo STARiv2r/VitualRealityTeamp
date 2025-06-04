@@ -1,75 +1,52 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.XR;
+﻿using UnityEngine;
 
-public class DoorAction : MonoBehaviour {
+public class DoorAction : MonoBehaviour
+{
+    public float rayDistance = 5f;  // 레이 쏘는 거리 조절 가능
 
-
-   
-
-   
-
-    void Update ()
+    void Update()
     {
-        if (RightTriggerPressed())
+        Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.red);
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
-          
             RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, rayDistance))
+            {
+                Debug.Log("Hit object: " + hit.transform.name);
 
-            Physics.Raycast(transform.position,transform.TransformDirection(Vector3.forward), out hit);
-            
-                Debug.Log(hit.transform.name);
-                if (hit.transform.tag == "door")
+                if (hit.transform.CompareTag("door"))
                 {
-
-                hit.transform.gameObject.GetComponent<Door>().ActionDoor();
-
-
+                    Door door = hit.transform.GetComponent<Door>();
+                    if (door != null)
+                    {
+                        door.ActionDoor();
+                    }
                 }
-
-                if(hit.collider.gameObject.name == "Button floor 1")
+                else
                 {
-                hit.transform.gameObject.GetComponent<pass_on_parent>().MyParent.GetComponent<evelator_controll>().AddTaskEve("Button floor 1");
-
+                    string objName = hit.collider.gameObject.name;
+                    switch (objName)
+                    {
+                        case "Button floor 1":
+                        case "Button floor 2":
+                        case "Button floor 3":
+                        case "Button floor 4":
+                        case "Button floor 5":
+                        case "Button floor 6":
+                            var passOnParent = hit.transform.gameObject.GetComponent<pass_on_parent>();
+                            if (passOnParent != null)
+                            {
+                                var elevatorControl = passOnParent.MyParent.GetComponent<evelator_controll>();
+                                if (elevatorControl != null)
+                                {
+                                    elevatorControl.AddTaskEve(objName);
+                                }
+                            }
+                            break;
+                    }
+                }
             }
-            if (hit.collider.gameObject.name == "Button floor 2")
-            {
-                hit.transform.gameObject.GetComponent<pass_on_parent>().MyParent.GetComponent<evelator_controll>().AddTaskEve("Button floor 2");
-            }
-            if (hit.collider.gameObject.name == "Button floor 3")
-            {
-                hit.transform.gameObject.GetComponent<pass_on_parent>().MyParent.GetComponent<evelator_controll>().AddTaskEve("Button floor 3");
-            }
-            if (hit.collider.gameObject.name == "Button floor 4")
-            {
-                hit.transform.gameObject.GetComponent<pass_on_parent>().MyParent.GetComponent<evelator_controll>().AddTaskEve("Button floor 4");
-            }
-            if (hit.collider.gameObject.name == "Button floor 5")
-            {
-                hit.transform.gameObject.GetComponent<pass_on_parent>().MyParent.GetComponent<evelator_controll>().AddTaskEve("Button floor 5");
-            }
-            if (hit.collider.gameObject.name == "Button floor 6")
-            {
-                hit.transform.gameObject.GetComponent<pass_on_parent>().MyParent.GetComponent<evelator_controll>().AddTaskEve("Button floor 6");
-            }
-
-
-
         }
-
-		
-	}
-    private bool RightTriggerPressed()
-    {
-        Debug.Log("");
-        InputDevice rightHand = InputDevices.GetDeviceAtXRNode(XRNode.RightHand);
-
-        if (rightHand.isValid && rightHand.TryGetFeatureValue(CommonUsages.triggerButton, out bool triggerPressed))
-        {
-            return triggerPressed;
-        }
-
-        return false;
     }
 }

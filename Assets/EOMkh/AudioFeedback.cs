@@ -2,18 +2,24 @@ using UnityEngine;
 
 public class AudioFeedback : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip fireAlarm;
-    public AudioClip toolGrab;
-    public AudioClip doorPush;
+    [SerializeField] private AudioSource fireAudioSource;
 
-    public void PlaySound(string key, float volume)
+    public void PlayAudio(float intensity)
     {
-        switch (key)
+        if (fireAudioSource != null)
         {
-            case "FireAlarm": audioSource.PlayOneShot(fireAlarm, volume); break;
-            case "ToolGrab": audioSource.PlayOneShot(toolGrab, volume); break;
-            case "DoorPush": audioSource.PlayOneShot(doorPush, volume); break;
+            if (!fireAudioSource.isPlaying)
+                fireAudioSource.Play();
+
+            fireAudioSource.volume = Mathf.Clamp01(intensity);
+        }
+    }
+
+    public void StopAudio()
+    {
+        if (fireAudioSource != null && fireAudioSource.isPlaying)
+        {
+            fireAudioSource.Stop();
         }
     }
 }

@@ -2,13 +2,13 @@
 
 public class DoorAction : MonoBehaviour
 {
-    public float rayDistance = 5f;  // 레이 쏘는 거리 조절 가능
+    public float rayDistance = 1f;  // 레이 쏘는 거리 조절 가능
 
     void Update()
     {
         Debug.DrawRay(transform.position, transform.forward * rayDistance, Color.red);
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E)||OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, rayDistance))

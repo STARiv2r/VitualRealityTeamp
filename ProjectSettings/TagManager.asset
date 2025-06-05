@@ -13,6 +13,31 @@ TagManager:
   - button f1
   - button f6
   - PlayerHand
+  - QDSUISection
+  - QDSUIAccentColor
+  - QDSUISecondaryButton
+  - QDSUIPrimaryButton
+  - QDSUITextSecondaryInvertedColor
+  - QDSUITextInvertedColor
+  - QDSUIToggleButton
+  - QDSUIIcon
+  - QDSUITextSecondaryColor
+  - QDSUIDestructiveButton
+  - QDSUISharedThemeColor
+  - QDSUIBorderlessButton
+  - QDSUIToggleBorderlessButton
+  - QDSUIBackplateGradient
+  - QDSUITooltip
+  - QDSUIToggleSwitch
+  - CinemachineTarget
+  - Locomotion
+  - LocoButton
+  - LocoText
+  - PassThroughButton
+  - PassThrough
+  - QDSUITextInputField
+  - SamplesInfoPanel
+  - QDSUIToggleCheckboxRadio
   layers:
   - Default
   - TransparentFX
@@ -22,7 +47,7 @@ TagManager:
   - UI
   - Fire
   - PlayerUI
-  - 
+  - PostProcessing
   - 
   - 
   - 

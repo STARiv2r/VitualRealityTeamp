@@ -54,12 +54,12 @@ public class RandomPatrol : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // 충돌했을 때 어떤 오브젝트와 충돌했는지 출력
-        //Debug.Log($"충돌 대상: {collision.gameObject.name}");
+        Debug.Log($"충돌 대상: {collision.gameObject.name}");
 
         // NPC 태그를 가진 오브젝트와 충돌한 경우
         if (collision.gameObject.CompareTag("NPC"))
         {
-            //Debug.Log("NPC와 충돌함! GetHit 애니메이션 실행 시도");
+            Debug.Log("NPC와 충돌함! GetHit 애니메이션 실행 시도");
             StartCoroutine(PlayGetHit());
         }
     }

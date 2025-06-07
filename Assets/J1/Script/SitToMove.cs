@@ -1,19 +1,19 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using UnityEngine.AI;
 
 
 public class SitToMove : MonoBehaviour
 {
-    //public Transform chairAnchor;                  // ÀÇÀÚ ±âÁØ À§Ä¡
-    public string sitAnimationName = "SitIdle";    // ¾É±â ¾Ö´Ï¸ŞÀÌ¼Ç ÀÌ¸§
-    public string standTriggerName = "StandUp";    // ÀÏ¾î³ª±â Æ®¸®°Å ÀÌ¸§
-    public float sitDuration = 5f;                 // ¾É¾ÆÀÖ´Â ½Ã°£ (ÃÊ)
+    public Transform chairTransform;                  // ì˜ì ê¸°ì¤€ ìœ„ì¹˜
+    public string sitAnimationName = "SitIdle";    // ì•‰ê¸° ì• ë‹ˆë©”ì´ì…˜ ì´ë¦„
+    public string standTriggerName = "StandUp";    // ì¼ì–´ë‚˜ê¸° íŠ¸ë¦¬ê±° ì´ë¦„
+    public float sitDuration = 5f;                 // ì•‰ì•„ìˆëŠ” ì‹œê°„ (ì´ˆ)
 
     private Animator animator;
     private NavMeshAgent agent;
     private RandomPatrol patrol;
     private CapsuleCollider capsuleCollider;
-    [SerializeField] private ChairPush targetChair; // ¿¬°áµÈ ÀÇÀÚÀÇ ¸®Áöµå¹Ùµğ
+    //[SerializeField] private ChairPush targetChair; // ì—°ê²°ëœ ì˜ìì˜ ë¦¬ì§€ë“œë°”ë””
 
     void Start()
     {
@@ -22,42 +22,54 @@ public class SitToMove : MonoBehaviour
         patrol = GetComponent<RandomPatrol>();
         capsuleCollider = GetComponent<CapsuleCollider>();
 
-        //NPC¸¦ ÀÇÀÚ À§Ä¡·Î ÀÌµ¿½ÃÅ´
+        //NPCë¥¼ ì˜ì ìœ„ì¹˜ë¡œ ì´ë™ì‹œí‚´
         //transform.position = chairAnchor.position;
         //transform.rotation = chairAnchor.rotation;
 
-        // ÀÌµ¿ ±â´É ºñÈ°¼ºÈ­
+        // ì´ë™ ê¸°ëŠ¥ ë¹„í™œì„±í™”
         agent.enabled = false;
         patrol.enabled = false;
-        capsuleCollider.enabled = false; // Ãæµ¹ ²û
+        capsuleCollider.enabled = false; // ì¶©ëŒ ë”
 
-        // ¾É±â ¾Ö´Ï¸ŞÀÌ¼Ç ½ÇÇà
+        // ì•‰ê¸° ì• ë‹ˆë©”ì´ì…˜ ì‹¤í–‰
         animator.Play(sitAnimationName);
 
-        // ÁöÁ¤ ½Ã°£ µÚ¿¡ Çàµ¿ ½ÃÀÛ
+        // ì§€ì • ì‹œê°„ ë’¤ì— í–‰ë™ ì‹œì‘
         Invoke(nameof(BeginEvacuation), sitDuration);
     }
 
     void BeginEvacuation()
     {
-        // ÀÏ¾î³ª±â ¾Ö´Ï¸ŞÀÌ¼Ç Æ®¸®°Å
+        // ì¼ì–´ë‚˜ê¸° ì• ë‹ˆë©”ì´ì…˜ íŠ¸ë¦¬ê±°
         animator.SetTrigger(standTriggerName);
 
-        // ÀÏ¾î³ª°í 1.5ÃÊ ÈÄ ÀÌµ¿ ½ÃÀÛ (¾Ö´Ï¸ŞÀÌ¼Ç ±æÀÌ¿¡ µû¶ó Á¶Á¤)
+        // âœ… ì´ ì‹œì ì— ë°”ë¡œ ì˜ì ë°€ê¸°
+        if (chairTransform != null)
+        {
+            ChairPush pushScript = chairTransform.GetComponent<ChairPush>();
+            if (pushScript != null)
+            {
+                pushScript.PushBack(transform.forward);
+            }
+        }
+
+        // ì¼ì–´ë‚˜ê³  1.5ì´ˆ í›„ ì´ë™ ì‹œì‘ (ì• ë‹ˆë©”ì´ì…˜ ê¸¸ì´ì— ë”°ë¼ ì¡°ì •)
         Invoke(nameof(StartMoving), 1.5f);
     }
 
     void StartMoving()
     {
-        
-        if (targetChair != null)
+        /*
+        if (chairTransform != null)
         {
-            // NPC°¡ ÀÏ¾î³ª¸ç ¾à°£ÀÇ ÈûÀ» µÚ·Î ¹Ğ¾îÁÜ
-            Vector3 pushDir = -transform.forward; // µÚ·Î
-            targetChair.Push(pushDir); // ÈûÀÇ Å©±â Á¶Àı
+            ChairPush pushBack = chairTransform.GetComponent<ChairPush>();
+            if (pushBack != null)
+            {
+                pushBack.PushBack(transform.forward);
+            }
         }
-
-        capsuleCollider.enabled = true; // Ãæµ¹ ´Ù½Ã ÄÔ
+        */
+        capsuleCollider.enabled = true;
         agent.enabled = true;
         patrol.enabled = true;
     }

@@ -1,35 +1,34 @@
+using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class ChairPush : MonoBehaviour
 {
-    public float pushForce = 200f; // �и��� ��
-    public float pushDuration = 0.1f; // �и��� �ð�
-    private Rigidbody rb;
-    private bool isPushed = false;
+    public float backDistance = 0.5f;     // 뒤로 밀릴 거리
+    public float moveDuration = 1f;       // 밀리는 데 걸리는 시간
+    public float delay = 0.2f;            // 캐릭터가 일어난 후 딜레이
 
-    void Awake()
+    public void PushBack(Vector3 facingDirection)
     {
-        rb = GetComponent<Rigidbody>();
+        Debug.Log("ChairPush: PushBack 호출됨");
+        Vector3 pushDir = -facingDirection.normalized;
+        Vector3 targetPosition = transform.position + pushDir * backDistance;
+        StartCoroutine(MoveToPositionSmoothly(targetPosition));
     }
 
-    public void Push(Vector3 direction)
+    private IEnumerator MoveToPositionSmoothly(Vector3 targetPos)
     {
-        if (isPushed) return; // �ߺ� ����
-        isPushed = true;
+        yield return new WaitForSeconds(delay);
 
-        // �и� ����
-        rb.isKinematic = false;
-        rb.AddForce(direction.normalized * pushForce);
+        Vector3 startPos = transform.position;
+        float elapsed = 0f;
 
-        // ���� �ð� �� �ٽ� ���� ó��
-        Invoke(nameof(StopMovement), pushDuration);
-    }
+        while (elapsed < moveDuration)
+        {
+            transform.position = Vector3.Lerp(startPos, targetPos, elapsed / moveDuration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
 
-    private void StopMovement()
-    {
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.isKinematic = true; // �ٽ� ����
+        transform.position = targetPos;
     }
 }

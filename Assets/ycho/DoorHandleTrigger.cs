@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class DoorHandleTrigger : MonoBehaviour
 {
     private bool isHandNear = false;
     [SerializeField] private Door door;
+    [SerializeField] private bool isExitDoor;
+    [SerializeField] private UIController UIController;
 
     private void Update()
     {
@@ -11,9 +14,19 @@ public class DoorHandleTrigger : MonoBehaviour
         {
             Debug.Log("Door!!");
             door.MoveMyDoor();
+            if (isExitDoor)
+            {
+                StartCoroutine(ShowGameClear());
+            }
         }
     }
 
+
+    IEnumerator ShowGameClear()
+    {
+        yield return new WaitForSeconds(2f);
+        UIController.clearFlag = true;
+    }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Door In 11!!");

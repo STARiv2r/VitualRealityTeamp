@@ -9,10 +9,18 @@ public class UIController : MonoBehaviour
     private int mapIndex = 0;
     private bool mapFlag = false;
 
-    public GameObject GameClearTitle;
+    public GameObject GameClearUI;
+    public bool clearFlag;
 
     private void Update()
     {
+        if (clearFlag)
+        {
+            MapUI.SetActive(false);
+            MapImageList[mapIndex].SetActive(false);
+            GameClearUI.SetActive(true);
+            return;
+        }
         if (OVRInput.GetDown(OVRInput.RawButton.X))
         {
             mapFlag = !mapFlag;
@@ -31,4 +39,5 @@ public class UIController : MonoBehaviour
             }
         }
     }
+
 }

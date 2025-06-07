@@ -2835,7 +2835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 81f55626-5fad-45e9-a1df-184f330da7ba
-  instanceId: a516e731-a598-4f46-865b-41874bd6d737
+  instanceId: d1c7dd34-8b2c-423a-a688-55b373324b7e
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -3212,7 +3212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f10154e0-16b2-492f-97d0-6639f69e7df6
-  instanceId: 314dc64c-7596-4a2e-91d2-39e85abb9583
+  instanceId: 60b12ea1-0153-4401-b7eb-ab5fc6fb7964
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -12663,7 +12663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: 8fe5b2d0-7811-41b1-91f7-8c1cff446c1b
+  instanceId: 6192b595-212d-4542-9c32-ef64e39db19f
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -13500,7 +13500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: 0877592d-8239-4edf-ae01-cb6efffc5e6f
+  instanceId: 51cd384d-9fe3-45b9-897b-dae3211a95b8
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -15732,7 +15732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 0393ca30-f2a9-4865-a40f-f9a68d01c3a9
-  instanceId: 9ff77394-7d62-49aa-b90c-12571d51afd1
+  instanceId: 52a0a3d3-f467-4ebd-a8a4-a1d0380514b2
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -18235,7 +18235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: c957f179-5c49-4098-bea9-ac71536c718e
+  instanceId: 38b97c91-80f5-4a59-9ea1-a615706e5d1b
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -20459,7 +20459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: 86f2efe6-8ad7-4c6c-acd8-c93eaa6ce107
+  instanceId: d5e498a0-2a34-4f5d-a679-052b30b4e60c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -21342,7 +21342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: d404dc09-b1b8-4320-a651-c838d937c662
+  instanceId: cf03e33d-1622-4e6a-b582-66b4709bee5e
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -22161,7 +22161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: 32132adb-ad7d-41b9-9f6d-fddafb1a27a5
+  instanceId: 0698f40a-4acd-4a1e-9dd3-ea6fef42ed8a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -22645,7 +22645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e47682b9-c270-40b1-b16d-90b627a5ce1b
-  instanceId: 250f3f3b-a033-49b9-9490-226c2b9266d7
+  instanceId: 35cd0106-0e61-4fa3-9232-2d0b4cd5e197
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -22843,7 +22843,8 @@ MonoBehaviour:
   - {fileID: 8592832103415261786}
   - {fileID: 7902203093364558656}
   MapUI: {fileID: 7916650414632978661}
-  GameClearTitle: {fileID: 4819431539376211657}
+  GameClearUI: {fileID: 4819431539376211657}
+  clearFlag: 0
 --- !u!1 &8753502351536962509
 GameObject:
   m_ObjectHideFlags: 0

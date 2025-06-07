@@ -2835,7 +2835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 81f55626-5fad-45e9-a1df-184f330da7ba
-  instanceId: d1c7dd34-8b2c-423a-a688-55b373324b7e
+  instanceId: d16be49f-29a3-4755-9db6-511b165982c3
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -3212,7 +3212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f10154e0-16b2-492f-97d0-6639f69e7df6
-  instanceId: 60b12ea1-0153-4401-b7eb-ab5fc6fb7964
+  instanceId: 3fec99a8-04eb-44cb-95e0-6f5433a24ebb
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -5535,7 +5535,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 127
+    m_Bits: 1663
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -12663,7 +12663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: 6192b595-212d-4542-9c32-ef64e39db19f
+  instanceId: 593e17db-b74c-466f-aadc-bfbcc1bb7921
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -13500,7 +13500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: 51cd384d-9fe3-45b9-897b-dae3211a95b8
+  instanceId: 1eef7926-c3cd-475e-98f6-7ea032e9216a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -15732,7 +15732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 0393ca30-f2a9-4865-a40f-f9a68d01c3a9
-  instanceId: 52a0a3d3-f467-4ebd-a8a4-a1d0380514b2
+  instanceId: be546267-ec93-4b08-93f4-f77299a73538
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -18235,7 +18235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: 38b97c91-80f5-4a59-9ea1-a615706e5d1b
+  instanceId: 2ee46c57-eb75-4628-a863-15cfe0e4439f
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -20459,7 +20459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: d5e498a0-2a34-4f5d-a679-052b30b4e60c
+  instanceId: 0835e4b9-ae9d-41f0-9df6-4d873d4a59d0
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -21342,7 +21342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: cf03e33d-1622-4e6a-b582-66b4709bee5e
+  instanceId: bed80763-683d-46d2-9ac7-c2e8cd606117
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -22161,7 +22161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: 0698f40a-4acd-4a1e-9dd3-ea6fef42ed8a
+  instanceId: e340e89a-63ab-4307-8e6d-738cc0858d93
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -22608,7 +22608,7 @@ GameObject:
   - component: {fileID: 5087109865031572272}
   - component: {fileID: 3263526122073391065}
   - component: {fileID: 2601310010762725535}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22645,7 +22645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e47682b9-c270-40b1-b16d-90b627a5ce1b
-  instanceId: 35cd0106-0e61-4fa3-9232-2d0b4cd5e197
+  instanceId: 344e8223-1d19-49b6-99aa-df66ffe41d69
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 

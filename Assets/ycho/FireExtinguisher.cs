@@ -28,6 +28,7 @@ public class FireExtinguisher : MonoBehaviour
         if (isPressing && isHolding)
         {
             spray.SetActive(true);
+            feedbackManager.TriggerHapticFeedback(1);
             Ray ray = new Ray(spray.transform.position, spray.transform.forward);
             RaycastHit hit;
 
@@ -41,7 +42,11 @@ public class FireExtinguisher : MonoBehaviour
             }
         }
         else
+        {
             spray.SetActive(false);
+            feedbackManager.StopHapticFeedback();
+        }
+            
     }
 
     private void OnTriggerStay(Collider other)

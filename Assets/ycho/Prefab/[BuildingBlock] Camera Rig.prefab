@@ -2551,8 +2551,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -293, y: 108}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 0, y: -41}
+  m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6752988287968667092
 CanvasRenderer:
@@ -2835,7 +2835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 81f55626-5fad-45e9-a1df-184f330da7ba
-  instanceId: 895d2621-21e8-4512-bc13-91b6dd0726aa
+  instanceId: a14cf334-f19a-4d47-b41d-3f679b31314a
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -3212,7 +3212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: f10154e0-16b2-492f-97d0-6639f69e7df6
-  instanceId: 2ca54348-7df6-4b30-be56-a12c66cba928
+  instanceId: 1e0e4d19-61f7-43c6-96b5-8f398ce9bfb9
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -7002,7 +7002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6201739145900685705
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7019,8 +7019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 332, y: -167}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 0, y: -41}
+  m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8723884348808234055
 CanvasRenderer:
@@ -12525,7 +12525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: b886df7a-66b0-406c-a62a-f55819f86836
+  instanceId: 4dc58b52-b3a9-4cdd-84d6-da9491c36a60
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -13362,7 +13362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: 4a0d91e6-45e3-44a7-b196-c102929a4fcb
+  instanceId: 17df80bd-c915-4930-8657-abd2aa1d04b5
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -15594,7 +15594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 0393ca30-f2a9-4865-a40f-f9a68d01c3a9
-  instanceId: df5e1722-cb92-4aaf-a4bd-22dd7a926648
+  instanceId: 8c4b342d-16eb-47d9-abba-a138caa955a6
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -17478,7 +17478,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &444864478781476658
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17495,8 +17495,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -293, y: -165}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 0, y: -41}
+  m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5223761081596191370
 CanvasRenderer:
@@ -18056,7 +18056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 8b26b298-7bf4-490e-b245-a039c0184303
-  instanceId: 68fd5d3f-393e-498f-b10f-cf93dd44af6e
+  instanceId: 4e4f9631-871b-4a77-80b0-ca723eaeca67
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -19960,7 +19960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8802143768004487836
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19977,8 +19977,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: 108}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 0, y: -41}
+  m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3915982119080966077
 CanvasRenderer:
@@ -20060,7 +20060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5183894521350264907}
   m_Layer: 7
-  m_Name: TutorialUI
+  m_Name: MapUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20211,7 +20211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: c1952c0d-bdc1-4430-9161-244be9d3f43d
+  instanceId: 111b8218-c170-4d42-8783-36abe5dcd3f6
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -20695,7 +20695,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7883940498643081301
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20712,8 +20712,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7, y: -166}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 0, y: -41}
+  m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2877034977391863218
 CanvasRenderer:
@@ -21094,7 +21094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 5817f7c0-f2a5-45f9-a5ca-64264e0166e8
-  instanceId: caba2386-23c0-4105-9ef4-117990581a0e
+  instanceId: be80e7b2-1144-4a87-a5e9-9de0264f11ef
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -21498,7 +21498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2760766199754853562
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21515,8 +21515,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 330, y: 108}
-  m_SizeDelta: {x: 250, y: 250}
+  m_AnchoredPosition: {x: 0, y: -41}
+  m_SizeDelta: {x: 550, y: 550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5586493791027180561
 CanvasRenderer:
@@ -21600,7 +21600,7 @@ GameObject:
   - component: {fileID: 245016267022808857}
   - component: {fileID: 3355417052011769922}
   m_Layer: 7
-  m_Name: UITest
+  m_Name: MapTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21913,7 +21913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: 6b67162c-2460-4766-a931-980388647573
-  instanceId: a2dcc22e-9019-41ea-855c-55f7a0d4bed0
+  instanceId: 6810a1df-5684-4c3e-a95a-0f564268f64c
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -22359,6 +22359,7 @@ GameObject:
   - component: {fileID: 4585944603580765044}
   - component: {fileID: 5087109865031572272}
   - component: {fileID: 3263526122073391065}
+  - component: {fileID: 908194737455951093}
   m_Layer: 0
   m_Name: '[BuildingBlock] Camera Rig'
   m_TagString: Untagged
@@ -22396,7 +22397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockId: e47682b9-c270-40b1-b16d-90b627a5ce1b
-  instanceId: f5fc15c1-8588-4627-a76d-4eaa7d76b91b
+  instanceId: 3cc4ae00-e9e9-4f69-8044-969de208bc3e
   version: 1
   installationRoutineCheckpoint:
     _installationRoutineId: 
@@ -22574,6 +22575,27 @@ MonoBehaviour:
   EnableLinearMovement: 1
   EnableRotation: 1
   RotationEitherThumbstick: 0
+--- !u!114 &908194737455951093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8747498982083311940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ca3c55662ea4b846a5a9746814634d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MapImageList:
+  - {fileID: 1126284587479083274}
+  - {fileID: 2839628152511378366}
+  - {fileID: 8273346460650871524}
+  - {fileID: 6912788286780779368}
+  - {fileID: 8592832103415261786}
+  - {fileID: 7902203093364558656}
+  MapUI: {fileID: 7916650414632978661}
+  GameClearTitle: {fileID: 4819431539376211657}
 --- !u!1 &8753502351536962509
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class ChairPush : MonoBehaviour
 {
-    public float backDistance = 0.5f;     // 뒤로 밀릴 거리
-    public float moveDuration = 1f;       // 밀리는 데 걸리는 시간
-    public float delay = 0.2f;            // 캐릭터가 일어난 후 딜레이
+    public float backDistance = 0.3f;     // 뒤로 밀릴 거리
+    public float moveDuration = 0.5f;       // 밀리는 데 걸리는 시간
+    public float delay = 0.3f;            // 캐릭터가 일어난 후 딜레이
 
     public void PushBack(Vector3 facingDirection)
     {

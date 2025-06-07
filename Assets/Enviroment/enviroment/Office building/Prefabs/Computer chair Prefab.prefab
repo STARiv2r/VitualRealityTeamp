@@ -13,12 +13,13 @@ GameObject:
   - component: {fileID: 23325886409886676}
   - component: {fileID: 64272447429728002}
   - component: {fileID: 7084548903385731966}
+  - component: {fileID: 4006259281030760380}
   m_Layer: 0
   m_Name: Computer chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4973654065712270
 Transform:
@@ -137,6 +138,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4006259281030760380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142622236161758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65e1e50c50505a49b34ca4209090604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backDistance: 0.5
+  moveDuration: 1
+  delay: 0.2
 --- !u!1 &1361454359923718
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +167,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4657504514099980
 Transform:

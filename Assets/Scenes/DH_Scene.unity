@@ -7024,6 +7024,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3263526122073391065, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
+      propertyPath: SnapRotation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8253841398350306237, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
       propertyPath: _leftHand
       value: 
@@ -7042,7 +7046,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8517729431032418809, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
       insertIndex: -1
       addedObject: {fileID: 394381365}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8747498982083311940, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1323789109}
   m_SourcePrefab: {fileID: 100100000, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
 --- !u!114 &1323789105 stripped
 MonoBehaviour:
@@ -7071,6 +7078,25 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8517729431032418809, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
   m_PrefabInstance: {fileID: 1323789104}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1323789108 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8747498982083311940, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
+  m_PrefabInstance: {fileID: 1323789104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1323789109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323789108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c6af13e15ffb34080c24119b7f76d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rayDistance: 1
+  feedbackManager: {fileID: 1494512869}
 --- !u!1 &1325771822
 GameObject:
   m_ObjectHideFlags: 0

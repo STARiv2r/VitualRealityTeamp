@@ -12,13 +12,21 @@ public class RandomPatrol : MonoBehaviour
     private float timer;                     // 시간 체크용 변수
     private float stuckTimer;                // 멈춤 상태 지속 시간 타이머
     private bool isHitReacting = false;      // 충돌 후 멈춰있는 상태 플래그
-    
+
+    //public AudioClip screamClip;       // scream.mp3 지정용
+    //private AudioSource audioSource;
+
+    // 비명 낼 확률 (0~1 사이)
+    //[Range(0f, 1f)]
+    //public float screamChance = 0.1f;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();      // 에이전트 컴포넌트 가져오기
         animator = GetComponent<Animator>();       // 애니메이터 가져오기
+        //audioSource = GetComponent<AudioSource>(); // 사운드
         SetRandomDestination();                    // 처음 목적지 설정
+
     }
 
     void Update()
@@ -47,7 +55,7 @@ public class RandomPatrol : MonoBehaviour
         }
 
         // 1초 이상 멈춰 있으면 경로 재설정
-        if (!agent.pathPending && agent.hasPath && agent.velocity.sqrMagnitude < 0.1f)
+        if (!agent.pathPending && agent.hasPath && agent.velocity.sqrMagnitude < 1f)
         {
             stuckTimer += Time.deltaTime;
 
@@ -63,6 +71,9 @@ public class RandomPatrol : MonoBehaviour
         {
             stuckTimer = 0f;
         }
+
+        // 랜덤하게 비명 시도
+        //TryScreamRandomly();
     }
 
     void SetRandomDestination()
@@ -79,9 +90,18 @@ public class RandomPatrol : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        /*
         if (collision.gameObject.name.Contains("Office building")) return;
         // 충돌했을 때 어떤 오브젝트와 충돌했는지 출력
         Debug.Log($"충돌 대상: {collision.gameObject.name}");
+        */
+
+        // NPC가 아닌 경우 충돌 무시
+        if (!collision.gameObject.CompareTag("NPC"))
+        {
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
+            return;
+        }
 
         // NPC 태그를 가진 오브젝트와 충돌한 경우
         if (collision.gameObject.CompareTag("NPC"))
@@ -110,4 +130,17 @@ public class RandomPatrol : MonoBehaviour
         SetRandomDestination(); // 충돌 후 경로 재계산
         isHitReacting = false;
     }
+
+    /*void TryScreamRandomly()
+    {
+        if (audioSource != null && screamClip != null && !audioSource.isPlaying)
+        {
+            if (Random.value < screamChance * Time.deltaTime * 60f)
+            {
+                audioSource.PlayOneShot(screamClip);
+                Debug.Log("NPC가 비명을 질렀습니다!");
+            }
+        }
+    }
+    */
 }

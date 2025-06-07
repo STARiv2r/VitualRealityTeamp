@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.Collections;
 using UnityEngine;
 
 public class FeedbackManager : MonoBehaviour
@@ -24,6 +26,13 @@ public class FeedbackManager : MonoBehaviour
         if (hapticFeedback != null)
             hapticFeedback.TriggerHaptic(intensity);
     }
+    public void TriggerHapticFeedback(float intensity, float time)
+    {
+        if (hapticFeedback != null)
+            hapticFeedback.TriggerHaptic(intensity);
+
+        StartCoroutine(StopByTime(time));
+    }
 
     // 단일 피드백 끄기
     public void StopVisualFeedback()
@@ -42,5 +51,12 @@ public class FeedbackManager : MonoBehaviour
     {
         if (hapticFeedback != null)
             hapticFeedback.StopHaptic();
+    }
+
+    IEnumerator StopByTime(float t)
+    {
+        yield return new WaitForSeconds(t);
+
+        StopHapticFeedback();
     }
 }

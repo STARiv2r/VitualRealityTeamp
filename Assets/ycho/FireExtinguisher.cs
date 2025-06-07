@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class FireExtinguisher : MonoBehaviour
@@ -5,8 +6,12 @@ public class FireExtinguisher : MonoBehaviour
     public GameObject spray;
     public float extinguishRange = 5f;
     public LayerMask fireLayerMask;
+    public FeedbackManager feedbackManager;
+
     bool isHolding = false;
     bool isPressing = false;
+
+
 
     private ParticleSystem.Particle[] particles;
 
@@ -42,12 +47,30 @@ public class FireExtinguisher : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("PlayerHand"))
+        {
+            
             isHolding = true;
+            
+        }
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PlayerHand"))
+        {
+            feedbackManager.TriggerHapticFeedback(1, 1f);
+        }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("PlayerHand"))
+        {
             isHolding = false;
+        }
     }
+
+    
+
 }

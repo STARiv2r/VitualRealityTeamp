@@ -3,6 +3,7 @@
 public class DoorAction : MonoBehaviour
 {
     public float rayDistance = 1f;  // 레이 쏘는 거리 조절 가능
+    public FeedbackManager feedbackManager;
 
     void Update()
     {
@@ -18,6 +19,7 @@ public class DoorAction : MonoBehaviour
                 if (hit.transform.CompareTag("door"))
                 {
                     Door door = hit.transform.GetComponent<Door>();
+                    feedbackManager.TriggerHapticFeedback(0.7f,0.5f);
                     if (door != null)
                     {
                         door.ActionDoor();

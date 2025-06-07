@@ -21,8 +21,12 @@ public class RandomPatrol : MonoBehaviour
 
     void Update()
     {
-        if (isHitReacting) return;                 // 충돌 반응 중이면 아무것도 하지 않음
-
+        if (isHitReacting)
+        {
+            if (animator != null)
+                animator.SetFloat("Speed", 0f);
+            return;                 // 충돌 반응 중이면 아무것도 하지 않음
+        }
         timer += Time.deltaTime;
 
         // 현재 속도를 애니메이터 Speed 파라미터에 전달 (애니메이션 상태 변경용)
@@ -53,6 +57,7 @@ public class RandomPatrol : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.name.Contains("Office building")) return;
         // 충돌했을 때 어떤 오브젝트와 충돌했는지 출력
         Debug.Log($"충돌 대상: {collision.gameObject.name}");
 

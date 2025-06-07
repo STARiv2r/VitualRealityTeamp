@@ -38,6 +38,7 @@ TagManager:
   - QDSUITextInputField
   - SamplesInfoPanel
   - QDSUIToggleCheckboxRadio
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -48,8 +49,8 @@ TagManager:
   - Fire
   - PlayerUI
   - PostProcessing
-  - PlayerBody
-  - Object
+  - 
+  - 
   - 
   - 
   - 

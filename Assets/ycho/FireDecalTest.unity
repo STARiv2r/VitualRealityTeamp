@@ -1514,13 +1514,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4819431539376211657, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8747498982083311940, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
       propertyPath: m_Name
       value: '[BuildingBlock] Camera Rig'
-      objectReference: {fileID: 0}
-    - target: {fileID: 9186598132720936260, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -10,7 +10,9 @@ public class RandomPatrol : MonoBehaviour
     private NavMeshAgent agent;              // 이동을 위한 NavMesh 에이전트
     private Animator animator;               // 애니메이션 컨트롤러
     private float timer;                     // 시간 체크용 변수
+    private float stuckTimer;                // 멈춤 상태 지속 시간 타이머
     private bool isHitReacting = false;      // 충돌 후 멈춰있는 상태 플래그
+    
 
     void Start()
     {
@@ -40,6 +42,26 @@ public class RandomPatrol : MonoBehaviour
         {
             SetRandomDestination();
             timer = 0f;
+            stuckTimer = 0f;
+            return;
+        }
+
+        // 1초 이상 멈춰 있으면 경로 재설정
+        if (!agent.pathPending && agent.hasPath && agent.velocity.sqrMagnitude < 0.1f)
+        {
+            stuckTimer += Time.deltaTime;
+
+            if (stuckTimer >= 1f)
+            {
+                Debug.Log("1초 이상 멈춤: 경로 재설정");
+                SetRandomDestination();
+                stuckTimer = 0f;
+                timer = 0f;
+            }
+        }
+        else
+        {
+            stuckTimer = 0f;
         }
     }
 
@@ -73,6 +95,7 @@ public class RandomPatrol : MonoBehaviour
     {
         isHitReacting = true;               // 이동 일시 정지
         agent.isStopped = true;             // NavMesh 에이전트 멈춤
+        agent.ResetPath();
 
         // GetHit 트리거를 발동시켜 애니메이션 전환 시도
         if (animator != null)
@@ -84,9 +107,7 @@ public class RandomPatrol : MonoBehaviour
         yield return new WaitForSeconds(hitReactTime);
 
         agent.isStopped = false;            // 다시 이동 재개
-
         SetRandomDestination(); // 충돌 후 경로 재계산
-
         isHitReacting = false;
     }
 }

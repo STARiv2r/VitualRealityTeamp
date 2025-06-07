@@ -48,8 +48,8 @@ TagManager:
   - Fire
   - PlayerUI
   - PostProcessing
-  - 
-  - 
+  - PlayerBody
+  - Object
   - 
   - 
   - 

@@ -17,7 +17,7 @@ public class UIController : MonoBehaviour
         {
             mapFlag = !mapFlag;
             MapUI.SetActive(mapFlag);
-            MapImageList[mapIndex].SetActive(true);
+            MapImageList[mapIndex].SetActive(mapFlag);
         }
         if (mapFlag == true)
         {

@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.AI; //J1 Modify
+
 
 public class FireController : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class FireController : MonoBehaviour
     
     private bool extinguishFlag;
 
+    private NavMeshObstacle navObstacle; // J1 Modify
 
     private void Update()
     {
@@ -18,7 +21,15 @@ public class FireController : MonoBehaviour
             if (extinguishProgress < extinguishTime)
                 UpdateVFX(1f - (extinguishProgress / extinguishTime));
             else
-                Destroy(gameObject); 
+            {
+                //J1 Modify
+                if (navObstacle != null)
+                {
+                    navObstacle.enabled = false;
+                }
+
+                Destroy(gameObject);
+            }
         }
 
         extinguishFlag = false;

@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
-
+using UnityEngine.AI;
 
 
 
@@ -10,7 +11,7 @@ public class Door : MonoBehaviour
 
 
     [System.Serializable]
-    public class DoorGet 
+    public class DoorGet
     {
 
         public GameObject Door;
@@ -21,50 +22,58 @@ public class Door : MonoBehaviour
 
 
     }
-   
+
     public List<DoorGet> UseDoors = new List<DoorGet>();
 
 
-   public bool door_in_use;
+    public bool door_in_use;
 
 
 
     public void MoveMyDoor()
     {
 
-        
+
         foreach (var door in UseDoors)
         {
             if (door.Door == gameObject)
             {
-                
-                   
-
-                    if (door.isDoorOpen == false && !door_in_use)
-                    {
-                        
-                        door_in_use = true;
-                        
-                        door.isDoorOpen = true;
-
-                        DoorStartUsing = StartCoroutine(OpenDoor(door.OpenValue, door.Door,door.RotationOrigin));
+                var navLink = GetComponent<NavMeshLink>();
 
 
+                if (door.isDoorOpen == false && !door_in_use)
+                {
+
+                    door_in_use = true;
+
+                    door.isDoorOpen = true;
+
+                    if (navLink != null)
+                        navLink.enabled = true; // 문 열릴 때 NavMesh 링크 활성화
+
+                    DoorStartUsing = StartCoroutine(OpenDoor(door.OpenValue, door.Door, door.RotationOrigin));
 
 
-                    }
 
-                    if (door.isDoorOpen == true && !door_in_use)
-                    {
-                        
 
-                        door_in_use = true;
-                        
-                        door.isDoorOpen = false;
-                        DoorStartUsing = StartCoroutine(CloseDoor(door.CloseValue, door.Door,door.OpenValue,door.RotationOrigin));
-                        
-                    }
-                
+                }
+
+                if (door.isDoorOpen == true && !door_in_use)
+                {
+
+
+                    door_in_use = true;
+
+                    door.isDoorOpen = false;
+
+                    if (navLink != null)
+                        navLink.enabled = false; // 문 닫힐 때 NavMesh 링크 비활성화
+
+
+                    DoorStartUsing = StartCoroutine(CloseDoor(door.CloseValue, door.Door, door.OpenValue, door.RotationOrigin));
+
+                }
+
 
             }
         }
@@ -73,35 +82,35 @@ public class Door : MonoBehaviour
 
 
 
-        public void ActionDoor()
-        {
+    public void ActionDoor()
+    {
 
 
 
         foreach (var door in UseDoors)
         {
-           
+
             door.Door.GetComponent<Door>().MoveMyDoor();
 
         }
 
 
-        } 
+    }
 
 
-    
+
 
     public Coroutine DoorStartUsing;
-    
 
-    public IEnumerator OpenDoor(int Angle,GameObject currentDoor,GameObject RotationOri)
+
+    public IEnumerator OpenDoor(int Angle, GameObject currentDoor, GameObject RotationOri)
     {
-        
 
-        repeatLoop:
+
+    repeatLoop:
         yield return new WaitForSeconds(0.01f);
-        
-      
+
+
 
         if (Angle > 0)
         {
@@ -115,7 +124,7 @@ public class Door : MonoBehaviour
             }
             if (Angle != RotationOri.transform.localEulerAngles.y)
             {
-                goto repeatLoop; 
+                goto repeatLoop;
             }
         }
         if (Angle < 0)
@@ -123,7 +132,7 @@ public class Door : MonoBehaviour
 
             RotationOri.transform.Rotate(new Vector3(0, 0, -95 * Time.deltaTime));
 
-            if ((360+Angle) > RotationOri.transform.localEulerAngles.z)
+            if ((360 + Angle) > RotationOri.transform.localEulerAngles.z)
             {
 
                 door_in_use = false;
@@ -131,32 +140,32 @@ public class Door : MonoBehaviour
             }
             if (Angle != RotationOri.transform.localEulerAngles.y)
             {
-                
+
                 goto repeatLoop;
             }
         }
 
-        
-        
+
+
     }
 
 
 
-    public IEnumerator CloseDoor(int Angle, GameObject currentDoor,int OpenValue, GameObject RotationOri)
+    public IEnumerator CloseDoor(int Angle, GameObject currentDoor, int OpenValue, GameObject RotationOri)
     {
-        repeatLoop:
+    repeatLoop:
         yield return new WaitForSeconds(0.008f);
 
-       
+
 
 
         if (OpenValue == 88)
         {
 
             RotationOri.transform.Rotate(new Vector3(0, 0, -95 * Time.deltaTime));
-           
 
-            if ((Angle+2) > RotationOri.transform.localEulerAngles.z)
+
+            if ((Angle + 2) > RotationOri.transform.localEulerAngles.z)
             {
 
                 door_in_use = false;
@@ -172,7 +181,7 @@ public class Door : MonoBehaviour
         {
 
             RotationOri.transform.Rotate(new Vector3(0, 0, 95 * Time.deltaTime));
-            
+
             if (RotationOri.transform.localEulerAngles.z > 358)
             {
 

@@ -18,6 +18,10 @@ public class RandomPatrol : MonoBehaviour
     private Door targetDoor = null;
     private bool isInteractingWithDoor = false;
 
+    private float doorCheckInterval = 10f;  // 문 탐지 주기 (초)
+    private float lastDoorCheckTime = -999f; // 마지막 문 탐지 시점
+
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();      // 에이전트 컴포넌트 가져오기
@@ -34,10 +38,12 @@ public class RandomPatrol : MonoBehaviour
             return;                 // 충돌 반응 중이면 아무것도 하지 않음
         }
 
-        // ✅ 문 탐지 우선 실행
-        if (!isInteractingWithDoor && !agent.pathPending && agent.remainingDistance >= 0.5f)
+
+        // ✅ 일정 주기로만 문 탐지 시도
+        if (!isInteractingWithDoor && targetDoor == null && Time.time - lastDoorCheckTime >= doorCheckInterval)
         {
-            if (CheckAndSetDoorAsDestination()) return;
+            lastDoorCheckTime = Time.time;
+            CheckAndSetDoorAsDestination();
         }
 
         // 문 앞 도착 시 문 열기
@@ -45,14 +51,7 @@ public class RandomPatrol : MonoBehaviour
         {
             if (!agent.pathPending && agent.remainingDistance < 1.0f)
             {
-                /*
-                Debug.Log("문 앞 도착 → 문 열기 시도");
-                targetDoor.MoveMyDoor();
-                targetDoor = null;
-                isInteractingWithDoor = false;
-                // 다시 원래 목적지로 이동
-                agent.SetDestination(originalDestination);
-                */
+
                 StartCoroutine(InteractWithDoor());
             }
             return;
@@ -111,11 +110,6 @@ public class RandomPatrol : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        /*
-        if (collision.gameObject.name.Contains("Office building")) return;
-        // 충돌했을 때 어떤 오브젝트와 충돌했는지 출력
-        Debug.Log($"충돌 대상: {collision.gameObject.name}");
-        */
 
         // NPC가 아닌 경우 충돌 무시
         if (!collision.gameObject.CompareTag("NPC"))
@@ -168,6 +162,7 @@ public class RandomPatrol : MonoBehaviour
             }
         }
     }
+    
     private bool CheckAndSetDoorAsDestination()
     {
         float detectionRadius = 5f;
@@ -178,7 +173,11 @@ public class RandomPatrol : MonoBehaviour
             Door door = hit.GetComponent<Door>();
             if (door != null)
             {
-                Debug.Log("문 감지 → 문 앞으로 이동 시작");
+                Door.DoorGet doorData = door.UseDoors.Find(d => d.Door == door.gameObject);
+                if (doorData == null || doorData.isDoorOpen) continue;
+
+                Debug.Log($"[{name}] 문 감지 → {door.name} 앞으로 이동 시작");
+
                 targetDoor = door;
                 originalDestination = agent.destination; // 원래 목적지 기억
                 agent.SetDestination(door.transform.position); // 문 앞으로 이동
@@ -188,6 +187,8 @@ public class RandomPatrol : MonoBehaviour
         }
         return false;
     }
+    
+ 
 
     private System.Collections.IEnumerator InteractWithDoor()
     {

@@ -13,6 +13,8 @@ public class FireEventTrigger : MonoBehaviour
 
         // 거리 기반 intensity 계산
         float intensity = Mathf.Clamp01(1f - (distance / maxDistance));
+        
+        if (intensity <= 0f) return;
 
         // 각각 독립적으로 적용 (예시: 시각/청각/햅틱 동일 적용 가능)
         feedbackManager.TriggerVisualFeedback(intensity);

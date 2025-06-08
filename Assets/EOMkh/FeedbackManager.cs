@@ -12,7 +12,11 @@ public class FeedbackManager : MonoBehaviour
     public void TriggerVisualFeedback(float intensity)
     {
         if (visualFeedback != null)
+        {
+            Debug.Log("Redoverlay:" + intensity);
             visualFeedback.ApplyVisualEffect(intensity);
+        }
+            
     }
 
     public void TriggerAudioFeedback(float intensity)

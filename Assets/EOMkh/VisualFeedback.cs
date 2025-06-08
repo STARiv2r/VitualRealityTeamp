@@ -18,7 +18,7 @@ public class VisualFeedback : MonoBehaviour
         
         if (redOverlay != null)
         {
-            currentColor.a = Mathf.Clamp01(intensity);
+            currentColor.a = Mathf.Clamp01(intensity*0.7f);
             redOverlay.color = currentColor;
         }
     }

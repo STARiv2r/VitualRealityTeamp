@@ -5016,6 +5016,10 @@ PrefabInstance:
       propertyPath: instanceId
       value: afbb19e8-3d6f-4ac1-8d1a-2739f5b9a12d
       objectReference: {fileID: 0}
+    - target: {fileID: 2742649389840093188, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
+      propertyPath: feedbackManager
+      value: 
+      objectReference: {fileID: 1494512869}
     - target: {fileID: 3430407813588045181, guid: 84717e5cde8efa3459fe08908d8d5d54, type: 3}
       propertyPath: instanceId
       value: e25fac6e-a696-4755-a9b6-735d412bde7d
@@ -7475,6 +7479,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 536473676077401773, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1126284587479083274, guid: 5d39bd0260614574eaca4de890971e91, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3263526122073391065, guid: 5d39bd0260614574eaca4de890971e91, type: 3}

@@ -678,6 +678,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1264622075497712, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 52031098}
+    - targetCorrespondingSourceObject: {fileID: 1195517974637174, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2036380568}
   m_SourcePrefab: {fileID: 100100000, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
 --- !u!1 &18946915 stripped
 GameObject:
@@ -761,7 +764,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114615807262274814, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
   m_PrefabInstance: {fileID: 18946914}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2036380564}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e7954b3afdba044799272ef7bf5c206, type: 3}
@@ -7577,7 +7580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6987764143650393822, guid: 05128e7600a3385438c937b31ebf1012, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.449
+      value: 16.673
       objectReference: {fileID: 0}
     - target: {fileID: 6987764143650393822, guid: 05128e7600a3385438c937b31ebf1012, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13048,6 +13051,36 @@ MonoBehaviour:
   feedbackManager: {fileID: 1494512869}
   playerTransform: {fileID: 1323789116}
   maxDistance: 8
+--- !u!1 &2036380564 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1195517974637174, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+  m_PrefabInstance: {fileID: 18946914}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2036380568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036380564}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eeb5dc026fdf4b488bc7ae0138ab719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 1
+  m_AgentTypeID: 0
+  m_StartPoint: {x: 0.8281717, y: -0.41916367, z: -2.007113}
+  m_EndPoint: {x: -1.8019149, y: 0.5388181, z: -2.0996535}
+  m_StartTransform: {fileID: 0}
+  m_EndTransform: {fileID: 0}
+  m_Activated: 1
+  m_Width: 0
+  m_CostModifier: 1
+  m_IsOverridingCost: 0
+  m_Bidirectional: 1
+  m_AutoUpdatePosition: 0
+  m_Area: 0
 --- !u!1001 &2044274326
 PrefabInstance:
   m_ObjectHideFlags: 0

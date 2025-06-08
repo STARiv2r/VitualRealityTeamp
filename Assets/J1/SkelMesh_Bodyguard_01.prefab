@@ -115,8 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 274842d4d595c654f9cd818e1a82689b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolRadius: 15
-  patrolInterval: 10
+  patrolRadius: 30
+  patrolInterval: 20
   hitReactTime: 0.5
 --- !u!195 &7547473106007684655
 NavMeshAgent:

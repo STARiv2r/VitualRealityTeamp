@@ -59,11 +59,28 @@ public class RandomPatrol : MonoBehaviour
 
         timer += Time.deltaTime;
 
+
+        /*
         // 현재 속도를 애니메이터 Speed 파라미터에 전달 (애니메이션 상태 변경용)
         if (animator != null && agent != null)
         {
             animator.SetFloat("Speed", agent.velocity.magnitude);
         }
+        */
+
+        if (animator != null && agent != null)
+        {
+            float moveSpeed = agent.velocity.magnitude;
+
+            if (agent.remainingDistance > 0.1f && moveSpeed < 0.1f && agent.hasPath)
+            {
+                // 경로는 있는데 속도가 거의 0이면 이동 중으로 보정
+                moveSpeed = 0.5f;
+            }
+
+            animator.SetFloat("Speed", moveSpeed);
+        }
+
 
         // 일정 시간마다 또는 목적지에 도착하면 새 목적지 설정
         if (!agent.pathPending && agent.remainingDistance < 0.5f || timer >= patrolInterval)

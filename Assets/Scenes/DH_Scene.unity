@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door_Use3
       objectReference: {fileID: 0}
+    - target: {fileID: 1316619380748360, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1413773579338636, guid: e2e6970f9dbe45743858950d9b85475f, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0

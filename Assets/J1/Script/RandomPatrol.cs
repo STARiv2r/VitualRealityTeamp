@@ -21,7 +21,6 @@ public class RandomPatrol : MonoBehaviour
     private float doorCheckInterval = 10f;  // 문 탐지 주기 (초)
     private float lastDoorCheckTime = -999f; // 마지막 문 탐지 시점
 
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();      // 에이전트 컴포넌트 가져오기
@@ -139,6 +138,7 @@ public class RandomPatrol : MonoBehaviour
         if (collision.gameObject.CompareTag("NPC"))
         {
             Debug.Log("NPC와 충돌함! GetHit 애니메이션 실행 시도");
+
             StartCoroutine(PlayGetHit());
         }
     }
@@ -273,6 +273,29 @@ public class RandomPatrol : MonoBehaviour
         }
 
         targetDoor = null;
+
+        // 일정 시간 후 문 닫기 코루틴 실행
+        StartCoroutine(CloseDoorAfterDelay(targetDoor, 3f)); // 3초 후 닫기
+
     }
+
+    private System.Collections.IEnumerator CloseDoorAfterDelay(Door door, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (door == null || door.UseDoors.Count == 0)
+            yield break;
+
+        var doorData = door.UseDoors.Find(d => d.Door == door.gameObject);
+        if (doorData == null || !doorData.isDoorOpen)
+            yield break;
+
+        Debug.Log($"[{name}] 문 자동 닫기 시도");
+
+        doorData.isDoorOpen = false;
+        door.door_in_use = true;
+        StartCoroutine(door.OpenDoor(doorData.CloseValue, doorData.Door, doorData.RotationOrigin));
+    }
+
 
 }

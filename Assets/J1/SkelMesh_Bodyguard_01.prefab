@@ -97,6 +97,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100154, guid: bdd7a03fd93bf2d4cb6babd63ceabee8, type: 3}
       insertIndex: -1
       addedObject: {fileID: -4384500196187360427}
+    - targetCorrespondingSourceObject: {fileID: 100154, guid: bdd7a03fd93bf2d4cb6babd63ceabee8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1831018639122352456}
   m_SourcePrefab: {fileID: 100100000, guid: bdd7a03fd93bf2d4cb6babd63ceabee8, type: 3}
 --- !u!1 &6987764143650099966 stripped
 GameObject:
@@ -118,6 +121,7 @@ MonoBehaviour:
   patrolRadius: 30
   patrolInterval: 20
   hitReactTime: 0.5
+  hitClip: {fileID: 8300000, guid: b61fbab2b86329a4d9282057424abb15, type: 3}
 --- !u!195 &7547473106007684655
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -127,7 +131,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6987764143650099966}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.3
+  m_Radius: 0.25
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -159,7 +163,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.3
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -218,7 +222,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -318,3 +322,16 @@ MonoBehaviour:
   screamClip: {fileID: 8300000, guid: 533efa87f92cee5499412f85735dbfcb, type: 3}
   minInterval: 5
   maxInterval: 30
+--- !u!114 &1831018639122352456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6987764143650099966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d2abfd3628fd2e4c993524888c752e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitClip: {fileID: 8300000, guid: b61fbab2b86329a4d9282057424abb15, type: 3}

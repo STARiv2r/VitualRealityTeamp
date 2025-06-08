@@ -26,7 +26,7 @@ public class RandomScream : MonoBehaviour
 
     void TryScream()
     {
-        if (audioSource != null && screamClip != null && !audioSource.isPlaying)
+        if (audioSource != null && screamClip != null /*&& !audioSource.isPlaying*/)
         {
             audioSource.PlayOneShot(screamClip);
             Debug.Log("ºñ¸í!");

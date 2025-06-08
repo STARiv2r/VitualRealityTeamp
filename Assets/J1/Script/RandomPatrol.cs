@@ -49,7 +49,7 @@ public class RandomPatrol : MonoBehaviour
         // 문 앞 도착 시 문 열기
         if (isInteractingWithDoor && targetDoor != null)
         {
-            if (!agent.pathPending && agent.remainingDistance < 1.0f)
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
             {
 
                 StartCoroutine(InteractWithDoor());
@@ -165,7 +165,7 @@ public class RandomPatrol : MonoBehaviour
     
     private bool CheckAndSetDoorAsDestination()
     {
-        float detectionRadius = 5f;
+        float detectionRadius = 3f;
         Collider[] hits = Physics.OverlapSphere(transform.position, detectionRadius);
 
         foreach (var hit in hits)
@@ -187,15 +187,15 @@ public class RandomPatrol : MonoBehaviour
         }
         return false;
     }
-    
- 
 
+
+    /*
     private System.Collections.IEnumerator InteractWithDoor()
     {
         isInteractingWithDoor = false; // 중복 실행 방지
         agent.isStopped = true;
 
-        Debug.Log("문 앞 도착 → 이동 멈추고 문 열기 시도");
+        Debug.Log($"[{name}] 문 앞 도착 → 문 열기 시도");
 
         // 문이 닫혀 있다면 열기 반복 시도
         while (!targetDoor.UseDoors[0].isDoorOpen) // 여러 문 있을 경우 조건 조절
@@ -212,6 +212,49 @@ public class RandomPatrol : MonoBehaviour
         Debug.Log("문 열림 완료 → 이동 재개");
         agent.isStopped = false;
         agent.SetDestination(originalDestination);
+        targetDoor = null;
+    }
+    */
+
+    private System.Collections.IEnumerator InteractWithDoor()
+    {
+        isInteractingWithDoor = false;
+        agent.isStopped = true;
+
+        if (targetDoor == null || targetDoor.UseDoors.Count == 0)
+            yield break;
+
+        var doorData = targetDoor.UseDoors.Find(d => d.Door == targetDoor.gameObject);
+        if (doorData == null)
+            yield break;
+
+        Debug.Log($"[{name}] 문 앞 도착 → 문 열기 시도");
+        targetDoor.MoveMyDoor(); // 단 한 번만 호출 (반복 금지)
+
+        // 문 열림까지 기다리기 (충분한 시간 확보)
+        yield return new WaitForSeconds(1.5f);
+
+        // ✅ NavMeshLink를 통과해 이동할 "문 반대편 지점"을 설정해야 함
+        Vector3 exitOffset = targetDoor.transform.forward * 0.1f; //
+        Vector3 exitPoint = targetDoor.transform.position + exitOffset;
+
+        // Debug 용 시각화
+        Debug.DrawRay(targetDoor.transform.position, exitOffset, Color.cyan, 3f);
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(exitPoint, out hit, 1.0f, NavMesh.AllAreas))
+        {
+            Debug.Log($"[{name}] 문 열림 완료 → 반대편({hit.position})으로 이동 재개");
+            agent.isStopped = false;
+            agent.SetDestination(hit.position);
+        }
+        else
+        {
+            Debug.LogWarning($"[{name}] 반대편 NavMesh 위치 찾기 실패 → 원래 목적지로 이동");
+            agent.isStopped = false;
+            agent.SetDestination(originalDestination);
+        }
+
         targetDoor = null;
     }
 

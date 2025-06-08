@@ -2073,6 +2073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 1
+  feedbackManager: {fileID: 0}
 --- !u!1001 &494449108016059778
 PrefabInstance:
   m_ObjectHideFlags: 0
